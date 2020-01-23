@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461;netcoreapp2.2</TargetFrameworks>
+    <AssemblyName>ErraticMotion.Spock</AssemblyName>
+    <RootNamespace>ErraticMotion</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ErraticMotion.Spock.Net</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Rob Ives</Authors>
+    <Company>Erratic Motion</Company>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/erraticmotion/gherkin-net</PackageProjectUrl>
+    <PackageTags>TDD BDD Gherkin</PackageTags>
+    <Description>Test Fixture generator for Gherkin.Net</Description>
+    <Copyright>Copyright Erratic Motion Ltd 2018</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ErraticMotion.Gherkin" Version="0.1.2" />
+    <PackageReference Include="ErraticMotion.Gherkin.Annotations" Version="0.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Test\Tools\LiteralByteExtensions.cs">
+      <DependentUpon>LiteralByteExtensions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Test\Tools\LiteralByteExtensions.tt">
+      <LastGenOutput>LiteralByteExtensions.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
